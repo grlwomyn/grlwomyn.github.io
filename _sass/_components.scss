@@ -4,7 +4,7 @@
  */
 .tabs {
   @extend %letter-spacing;
-  font-family: "futura", sans-serif;
+
   display: flex;
   justify-content: space-around;
   padding: 1em;
@@ -18,12 +18,12 @@
     padding-left: 10em;
     padding-right: 10em;
   }
-
+  
   &__item {
     cursor: pointer;
 
     &:not(.active) {
-
+      @include border-slide();
     }
 
     &.active {
@@ -67,7 +67,7 @@
 
 .preview {
   transition: background-color 0.2s ease-in-out;
-
+  
   &:nth-child(even) {
     background-color: $color-white;
   }
@@ -115,6 +115,9 @@
     color: $color-black;
   }
 
+  &__more {
+    @include button-slide();
+  }
 }
 
 /**
@@ -134,6 +137,7 @@
 .card {
 
   &__link {
+    @include box-shadow(1px);
 
     position: relative;
 
@@ -143,7 +147,7 @@
     transition: background-color 0.2s ease-in-out;
 
     &:after {
-
+      @include box-shadow(3px);
 
       content: '';
       position: absolute;
@@ -164,9 +168,9 @@
       &:after {
         opacity: 1;
       }
-
+      
       .card__more {
-
+        box-shadow: inset 175px 0 0 0 $color-alpha;
         color: $color-white;
       }
     }
@@ -197,7 +201,7 @@
   }
 
   &__more {
-
+    @include button-slide(0.25em);
   }
 }
 
@@ -245,7 +249,7 @@
   }
 
   &__archive {
-
+    @include border-slide();
 
     @extend %letter-spacing;
   }
@@ -260,7 +264,7 @@
 
     & > *:not(:last-child) {
       margin-right: 1em;
-    }
+    }    
   }
 }
 
@@ -368,7 +372,7 @@
     width: 55%;
   }
 
-  h1,
+  h1, 
   h2 {
     line-height: 1.2;
   }
@@ -408,7 +412,7 @@
   }
 
   &__card {
-
+    @include box-shadow(1px);
 
     display: flex;
     flex-direction: column;
