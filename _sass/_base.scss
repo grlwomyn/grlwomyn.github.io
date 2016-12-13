@@ -30,7 +30,8 @@ html {
     background-color: #F9ECDE;
 }
 body {
-
+  display: flex;
+  flex-direction: column;
   font-family: $font-body;
   font-feature-settings: 'liga' 0;
   font-size: 100%;
