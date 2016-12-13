@@ -1,33 +1,23 @@
-# Site settings
-email:
-baseurl: ""
-paginate: 5
-paginate_path: "/blog/page-:num"
-google_analytics:
-
-# SEO settings
+---
 title: grlwomyn
-description:
-url: ""
-twitter_username:
-default_img:
-
-# Profile settings
-name: grlwomyn
-profile_img:
-profile:
-social:
-  github:
-
-# Build settings
-include: ["_categories"]
-exclude: ["_screenshots", "Gemfile", "Gemfile.lock"]
-markdown: kramdown
-permalink: /:year/:month/:day/:title/
-
-# Sass
-sass:
-  style: compressed
-
-# Gems
-gems: [jekyll-paginate, jekyll-sitemap, octopress-autoprefixer]
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: "/posts/:title/"
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+permalink: pretty
